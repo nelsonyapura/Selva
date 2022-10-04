@@ -1,0 +1,222 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* El (scroll-behavior) de nav que te dirige a donde marcaste en html y haga scroll se vea fluido y elegante */
+html{
+    scroll-behavior: smooth;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+li{ font-size: 2.00em}
+
+button{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(72, 119, 72);
+    box-shadow:  2px 2px 2px;
+    color: white;
+    background-color: rgba(51, 75, 51, 0.76);
+}
+
+button:hover{
+    background-color: rgb(36, 59, 36);
+}
+
+/* (Background-position: center center) Sirve para centrar la imagine puesta) Tambien (background-image: linear-grandient) para  hacer tipo sombreado a las imagines que ponemos según nuestro gusto de opacidad*/
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    color: white;
+    background-image: linear-gradient(0deg,
+     rgba(0,0,0,0.5),
+     rgba(0,0,0,0.5)
+     )
+    ,url('../img/hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* Parte de te guiamos */
+#somos-noso .container{
+    text-align: center;
+    padding: 150px 12px;
+
+}
+
+/* Esta parte es (nuestra-vision)(Prepara tu viaje) */
+#nuestra-vision{
+    background-color: rgba(30, 30, 30);
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+
+
+#nuestra-vision .container{
+    padding: 200px 12px;
+}
+
+#nuestra-vision h2{
+    margin-top: 0;
+}
+
+#nuestra-vision p{
+    display: none;
+}
+
+#nuestra-vision .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px;
+    margin: 15px;
+    border-radius: 10px;
+
+}
+
+/* nota importante de como first-child y nth-child hacen como hermanos para referirnos a los dos por separados para colocar imagines en la parte Te preparamos tu viaje hacia abajo los dos parrafos */
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+    )
+    ,url('../img/iquitos-catedral.jpg')
+
+}
+
+.carta:nth-child(2){ 
+    background-image: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+)
+,url('../img/amazonia-peruana.jpg')
+
+}
+
+
+header{
+    background-color: rgb(245, 245, 245);
+}
+
+header .logo{
+    margin: 0;
+    padding: 35px 30px;
+    font-weight: bold;
+    color: rgb(72, 119, 72);
+    font-size: 1.5em;
+}
+
+/* Este header .container (display: flex y flex-direction) sirve para que se ordene en una columna (aling-items:center) para centrar horizontalmente */
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#iconos .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#iconos li{
+    margin: 16px 0px;
+    font-weight: bold;
+}
+
+
+/* Media hecho para Desktop y su vista confortable */
+@media (min-width: 720px){
+    
+    /* En este header el (position: fixed) sirve para que el header junto al nav se queden cuando uno scrolea pagina hacia abajo o arriba y no desaparezca */
+    header{
+        position: fixed;
+        width: 100%;
+    }
+    
+    /* En este container (justife-content: space-between) Sirve para separar el contenido en nav */
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+        
+    /* header de navegación y modificación de esta misma */
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 100px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Este (header a), es para modificar la nagevación y con (text decoration) eliminamos las rayas */
+    header a{ 
+        padding: 5px 30px;
+        text-decoration: none;
+    }
+
+    /* (justify-content: space-evenly;) Esto hace que haga espacio por iguales en la pagina y así sea mas flexible a la hora de agrandar o achicar la pagina */
+    #somos-noso .container{
+        display: flex;
+        justify-content: space-evenly; 
+    }
+
+    #somos-noso .texto{
+        width: 50%;
+        text-align: initial;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    #somos-noso .img-container{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ), url('../img/guia-amazonica.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        width: 400px;
+        border-radius: 10px;
+    }
+ 
+    #nuestra-vision .vision{
+        display: flex;
+        justify-content: center;
+    }
+
+    #nuestra-vision p{
+        display: block;
+
+    }
+
+    #nuestros-programas h3{
+        margin-top: 0;
+
+    }
+
+    #nuestra-vision .carta{
+        padding: 15px;
+    }
+
+    footer p{
+        padding-left: 1650px;
+        font-weight: bold;
+    }
